@@ -3,114 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FightCoin - O Jogo da Revolta</title>
+  <title>Boxechain – NFTs Oficiais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #0f0f0f;
-      color: #f0f0f0;
+      color: #fff;
     }
     header {
-      background-color: #111;
-      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: #121212;
+      border-bottom: 1px solid #222;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f5c13b;
+    }
+    .connect-btn {
+      padding: 10px 20px;
+      background-color: #f5c13b;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    main {
+      padding: 40px 10%;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #feca1b;
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #feca1b;
-      text-decoration: none;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 900px;
+    .description {
+      font-size: 1.2rem;
+      max-width: 600px;
       margin: auto;
+      color: #ccc;
     }
-    section h2 {
-      color: #feca1b;
+    .nfts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    .nft-card {
+      background-color: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+    }
+    .nft-card img {
+      width: 100%;
+      border-radius: 8px;
       margin-bottom: 15px;
     }
-    .btn {
-      background-color: #feca1b;
-      color: black;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
+    .nft-card h3 {
+      color: #f5c13b;
+      margin-bottom: 10px;
+    }
+    .mint-btn {
+      padding: 15px 30px;
+      background-color: #f5c13b;
+      color: #000;
       font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    section {
+      background-color: #161616;
+      padding: 40px 10%;
+      margin-top: 40px;
     }
     footer {
-      background-color: #111;
       text-align: center;
       padding: 20px;
+      background-color: #0f0f0f;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
       color: #777;
-      font-size: 0.9em;
+    }
+    a {
+      color: #f5c13b;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🥊 FIGHTCOIN</h1>
-    <nav>
-      <a href="#jogo">O Jogo</a>
-      <a href="#token">Token</a>
-      <a href="#nfts">NFTs</a>
-      <a href="#roadmap">Roadmap</a>
-    </nav>
+    <div class="logo">BOXECHAIN</div>
+    <button class="connect-btn" onclick="alert('Função de conectar carteira em breve.')">Conectar Carteira</button>
   </header>
 
-  <section id="jogo">
-    <h2>🔥 O Jogo</h2>
-    <p>FightCoin é um jogo de luta inspirado em Fight Night, desenvolvido para Android com multiplayer, torneios, rankings, e sistema de evolução. Aqui, os jogadores podem lutar, treinar, narrar, apostar e criar uma carreira real dentro do ringue digital.</p>
-  </section>
+  <main>
+    <h1 class="title">NFTs Oficiais do Jogo Boxechain</h1>
+    <p class="description">
+      Garanta seu lugar com uma NFT exclusiva: Founder, Alpha ou Beta.  
+      Cada NFT concede acesso antecipado, visuais únicos e cargos especiais no Discord oficial.
+    </p>
 
-  <section id="token">
-    <h2>🪙 O Token FightCoin</h2>
-    <p>FightCoin ($FIGHT) é o token que financia o desenvolvimento do jogo. Parte dos lucros do projeto serão reinvestidos no próprio token através de recompra e valorização.</p>
-    <p>Distribuição:</p>
-    <ul>
-      <li>60% – Investimento em ativos</li>
-      <li>10% – Marketing</li>
-      <li>10% – Equipe</li>
-      <li>10% – Operações</li>
-      <li>10% – Reserva de emergência</li>
-    </ul>
-    <a href="#" class="btn">Ver Whitepaper</a>
-  </section>
+    <div class="nfts">
+      <div class="nft-card">
+        <img src="NFT_Founder.png" alt="NFT Founder"/>
+        <h3>Founder</h3>
+        <p>Acesso total, status lendário, nome nos créditos e skin vitalícia no jogo.</p>
+      </div>
+      <div class="nft-card">
+        <img src="NFT_Alpha.png" alt="NFT Alpha"/>
+        <h3>Alpha</h3>
+        <p>Teste antecipado do jogo, cargo exclusivo e visuais raros.</p>
+      </div>
+      <div class="nft-card">
+        <img src="NFT_Beta.png" alt="NFT Beta"/>
+        <h3>Beta</h3>
+        <p>Entrada no beta fechado e personalização especial para combatentes.</p>
+      </div>
+    </div>
 
-  <section id="nfts">
-    <h2>🎖️ NFTs Fundadores</h2>
-    <p>Seja um dos primeiros 10 fundadores a garantir sua NFT exclusiva. Os holders terão benefícios únicos no jogo: acesso antecipado, skins raras e muito mais.</p>
-    <a href="#" class="btn">Comprar NFT</a>
-  </section>
+    <button class="mint-btn" onclick="alert('Mint disponível em breve.')">🔥 Mintar seu NFT</button>
+  </main>
 
-  <section id="roadmap">
-    <h2>🚀 Roadmap</h2>
-    <ul>
-      <li>✅ Criação do Token</li>
-      <li>✅ Lançamento do Site</li>
-      <li>🔄 Venda dos NFTs</li>
-      <li>🔄 Pré-venda do Token</li>
-      <li>🔄 Desenvolvimento do Jogo (MVP)</li>
-      <li>🔄 Lançamento Beta</li>
-      <li>🔄 Listagem do Token e Marketing pesado</li>
-    </ul>
+  <section>
+    <h2>Sobre o Projeto</h2>
+    <p class="description">
+      Boxechain é um jogo de luta competitivo com integração NFT.
+      Os tokens são colecionáveis de acesso e personalização.  
+      Não prometemos lucros — você está comprando participação, não investimento.
+    </p>
+    <p style="margin-top: 20px;">
+      Acesse também: 
+      <a href="#">Whitepaper</a> • 
+      <a href="#">Discord</a> • 
+      <a href="#">Twitter</a>
+    </p>
   </section>
 
   <footer>
-    <p>&copy; 2025 FightCoin. Todos os direitos reservados.</p>
-    <p>Nos siga: 
-      <a href="https://t.me/fightcoin" style="color:#feca1b;">Telegram</a> | 
-      <a href="#" style="color:#feca1b;">Twitter</a>
-    </p>
+    &copy; 2025 Boxechain. Todos os direitos reservados.
   </footer>
 
 </body>
