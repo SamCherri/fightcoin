@@ -1,8 +1,8 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Husky FC - Clube Descentralizado</title>
+  <title>Husky FC - Decentralized Football Club</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
     body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f9f9f9; color: #222; }
@@ -31,93 +31,118 @@
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('es')">ES</button>
   </nav>  <header>
-    <h1>Husky FC</h1>
-    <p>O primeiro clube de futebol descentralizado criado por apaixonados como você.</p>
-    <button class="cta">Garanta sua Fan NFT agora</button>
+    <h1 id="title">Husky FC</h1>
+    <p id="subtitle">The first decentralized football club created by fans like you.</p>
+    <button class="cta" id="cta-button">Get your Fan NFT now</button>
   </header>  <section class="section-box">
-    <h2>Sobre o Projeto</h2>
-    <p>
-      Husky FC é um projeto visionário de futebol, onde qualquer pessoa pode participar da fundação de um clube descentralizado. O projeto começa com a venda de NFTs ilimitadas de torcedor, que dão direito a reconhecimento como apoiador oficial da ideia e, futuramente, um cargo especial no Discord.
+    <h2 id="about-title">About the Project</h2>
+    <p id="about-text">
+      Husky FC is a visionary football club, built from scratch by a community of supporters. It begins with the sale of unlimited Fan NFTs, granting symbolic recognition and a future exclusive role in our Discord community.
     </p>
-    <p>
-      Sem promessas de lucro e com total transparência, o Husky FC visa levantar fundos para criar uma equipe real de futebol competitiva e estruturada. A escolha do país de origem será aberta à comunidade, e todas as decisões seguirão o modelo de governança descentralizada.
-    </p>
+    <p id="about-note"><strong>No profit promises. Total transparency. A football club born from the blockchain.</strong></p>
   </section>  <section class="section-box">
-    <h2>Como Participar</h2>
-    <ul>
-      <li>🛒 Adquira a Fan NFT por um valor simbólico</li>
-      <li>📢 Compartilhe a ideia e ajude o projeto a ganhar visibilidade</li>
-      <li>🧠 Participe dos debates e decisões futuras sobre o clube</li>
-      <li>🎖️ Ganhe um cargo exclusivo no Discord assim que for ativado</li>
+    <h2 id="funding-title">🧩 Funding Stages</h2>
+    <ul id="funding-steps">
+      <li>📌 Step 1: Sell unlimited Fan NFTs to raise initial capital</li>
+      <li>💰 Upon reaching US$10,000: launch of official token + marketing actions</li>
+      <li>🔒 The token remains locked until the target amount is raised</li>
+      <li>📢 All raised funds are public and traceable by the community</li>
     </ul>
   </section>  <section class="section-box roadmap">
-    <h2>📈 Roadmap - Etapas do Husky FC</h2><div class="step">
-  <div class="phase-icon">🚀</div>
-  <div>
-    <div class="phase-title">Fase 1 – US$10.000</div>
-    <p>Desenvolvimento do site oficial, identidade visual, redes sociais e início da campanha de marketing. Estruturação das Fan NFTs.</p>
-  </div>
-</div>
-<div class="step">
-  <div class="phase-icon">⚙️</div>
-  <div>
-    <div class="phase-title">Fase 2 – US$20.000</div>
-    <p>Criação do token oficial do projeto. Estabelecimento da governança e diretrizes da DAO. Formação da equipe de gestão.</p>
-  </div>
-</div>
-<div class="step">
-  <div class="phase-icon">⚽</div>
-  <div>
-    <div class="phase-title">Fase 3 – US$60.000</div>
-    <p>Contratação de comissão técnica, planejamento tático e primeiros atletas. Uniformes e identidade visual do time em campo.</p>
-  </div>
-</div>
-<div class="step">
-  <div class="phase-icon">🏟️</div>
-  <div>
-    <div class="phase-title">Fase 4 – US$80.000</div>
-    <p>Início da construção do centro de treinamento e infraestrutura básica. Estádio comunitário projetado com a participação dos membros.</p>
-  </div>
-</div>
-<div class="step">
-  <div class="phase-icon">📦</div>
-  <div>
-    <div class="phase-title">Fase 5 – US$120.000</div>
-    <p>Criação do fundo operacional para bancar salários, viagens, manutenção e custos logísticos durante a primeira temporada.</p>
-  </div>
-</div>
-<div class="step">
-  <div class="phase-icon">👕</div>
-  <div>
-    <div class="phase-title">Fase 6 – US$160.000</div>
-    <p>Lançamento da loja oficial do clube com camisas físicas e colecionáveis. Parcerias com designers e influenciadores Web3.</p>
-  </div>
-</div>
-<div class="step">
-  <div class="phase-icon">📣</div>
-  <div>
-    <div class="phase-title">Fase 7 – US$200.000</div>
-    <p>Campanha internacional de divulgação, listagem do token em corretoras e expansão da marca Husky FC.</p>
-  </div>
-</div>
-
+    <h2 id="roadmap-title">📈 Roadmap - Husky FC Journey</h2>
+    <div class="step"><div class="phase-icon">🚀</div><div><div class="phase-title">Phase 1 – US$10,000</div><p>Website, visual identity, and marketing launch.</p></div></div>
+    <div class="step"><div class="phase-icon">⚙️</div><div><div class="phase-title">Phase 2 – US$20,000</div><p>Token creation, DAO rules, and initial team setup.</p></div></div>
+    <div class="step"><div class="phase-icon">⚽</div><div><div class="phase-title">Phase 3 – US$60,000</div><p>Real team setup, coach and uniforms.</p></div></div>
+    <div class="step"><div class="phase-icon">🏟️</div><div><div class="phase-title">Phase 4 – US$80,000</div><p>Begin building club infrastructure (training field).</p></div></div>
+    <div class="step"><div class="phase-icon">📦</div><div><div class="phase-title">Phase 5 – US$120,000</div><p>Operational fund for one competitive season.</p></div></div>
+    <div class="step"><div class="phase-icon">👕</div><div><div class="phase-title">Phase 6 – US$160,000</div><p>Official jersey and online store launch.</p></div></div>
+    <div class="step"><div class="phase-icon">📣</div><div><div class="phase-title">Phase 7 – US$200,000</div><p>Mass marketing, token listings and worldwide presence.</p></div></div>
   </section>  <section class="section-box benefits">
-    <h2>Vantagens da Fan NFT</h2>
-    <ul>
-      <li>✔️ Reconhecimento eterno como fundador</li>
-      <li>✔️ Acesso futuro a cargos exclusivos no Discord</li>
-      <li>✔️ Participação simbólica no crescimento do clube</li>
-      <li>✔️ Incentivo ao sonho de um time da comunidade para o mundo</li>
+    <h2 id="benefits-title">Fan NFT Benefits</h2>
+    <ul id="benefits-list">
+      <li>✔️ Eternal recognition as a founder</li>
+      <li>✔️ Future role in Discord community</li>
+      <li>✔️ Support a dream club from scratch</li>
+      <li>✔️ Be part of football history with Web3</li>
     </ul>
-    <button class="cta">Adquirir minha Fan NFT</button>
+    <button class="cta" id="nft-button">Buy Fan NFT</button>
   </section>  <footer>
-    <p>Transparência total. Nenhuma promessa de lucro. Carteira pública e decisões comunitárias. | <span class="social-links">
-      <a href="https://www.tiktok.com/@huskyf.c" target="_blank">TikTok</a> |
-      <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Telegram</a>
-    </span></p>
+    <p id="footer-text">
+      No profit guarantees. Transparent wallet. Fully community-driven.<br />
+      <span class="social-links">
+        <a href="https://www.tiktok.com/@huskyf.c" target="_blank">TikTok</a> |
+        <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Telegram</a>
+      </span>
+    </p>
   </footer>  <script>
+    const translations = {
+      pt: {
+        title: "Husky FC",
+        subtitle: "O primeiro clube de futebol descentralizado criado por apaixonados como você.",
+        cta: "Garanta sua Fan NFT agora",
+        about_title: "Sobre o Projeto",
+        about_text: "O Husky FC é um clube de futebol construído do zero pela comunidade. Começamos com a venda ilimitada da Fan NFT.",
+        about_note: "Sem promessas de lucro. Total transparência. Um clube nascido da blockchain.",
+        funding_title: "🧩 Etapas de Financiamento",
+        funding_steps: [
+          "📌 Primeiro passo: venda ilimitada da Fan NFT",
+          "💰 Ao atingir US$10.000: lançamento do token e marketing",
+          "🔒 O token será travado até atingir o valor necessário",
+          "📢 Toda arrecadação será pública e rastreável"
+        ],
+        roadmap_title: "📈 Roadmap - Jornada Husky FC",
+        benefits_title: "Vantagens da Fan NFT",
+        benefits_list: [
+          "✔️ Reconhecimento eterno como fundador",
+          "✔️ Cargo futuro exclusivo no Discord",
+          "✔️ Apoie um clube nascido do zero",
+          "✔️ Participe da história do futebol na Web3"
+        ],
+        nft_button: "Comprar Fan NFT",
+        footer_text: "Sem promessas de lucro. Carteira transparente. Totalmente gerido pela comunidade."
+      },
+      es: {
+        title: "Husky FC",
+        subtitle: "El primer club de fútbol descentralizado creado por aficionados como tú.",
+        cta: "Obtén tu Fan NFT ahora",
+        about_title: "Sobre el Proyecto",
+        about_text: "Husky FC es un club de fútbol creado desde cero por la comunidad. Comienza con la venta ilimitada de NFTs de aficionados.",
+        about_note: "Sin promesas de ganancias. Transparencia total. Un club nacido en blockchain.",
+        funding_title: "🧩 Etapas de Financiamiento",
+        funding_steps: [
+          "📌 Paso 1: Venta ilimitada de Fan NFTs",
+          "💰 Al alcanzar US$10.000: lanzamiento del token y marketing",
+          "🔒 El token estará bloqueado hasta alcanzar el capital objetivo",
+          "📢 Toda recaudación será pública y rastreable"
+        ],
+        roadmap_title: "📈 Roadmap - Trayectoria Husky FC",
+        benefits_title: "Ventajas de la Fan NFT",
+        benefits_list: [
+          "✔️ Reconocimiento eterno como fundador",
+          "✔️ Rol exclusivo en Discord en el futuro",
+          "✔️ Apoya a un club creado desde cero",
+          "✔️ Sé parte de la historia del fútbol en Web3"
+        ],
+        nft_button: "Comprar Fan NFT",
+        footer_text: "Sin garantías de beneficios. Cartera transparente. Totalmente dirigido por la comunidad."
+      }
+    };
+
     function setLang(lang) {
-      alert("Tradução automática ainda em desenvolvimento.");
+      const t = translations[lang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("cta-button").textContent = t.cta;
+      document.getElementById("about-title").textContent = t.about_title;
+      document.getElementById("about-text").textContent = t.about_text;
+      document.getElementById("about-note").textContent = t.about_note;
+      document.getElementById("funding-title").textContent = t.funding_title;
+      document.getElementById("funding-steps").innerHTML = t.funding_steps.map(s => `<li>${s}</li>`).join('');
+      document.getElementById("roadmap-title").textContent = t.roadmap_title;
+      document.getElementById("benefits-title").textContent = t.benefits_title;
+      document.getElementById("benefits-list").innerHTML = t.benefits_list.map(s => `<li>${s}</li>`).join('');
+      document.getElementById("nft-button").textContent = t.nft_button;
+      document.getElementById("footer-text").innerHTML = t.footer_text + '<br /><span class="social-links"><a href="https://www.tiktok.com/@huskyf.c" target="_blank">TikTok</a> | <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Telegram</a></span>';
     }
   </script></body>
 </html>
