@@ -3,132 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Husky FC - Decentralized Football Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; line-height: 1.6; background: #f9f9f9; color: #222; }
-    header { background: linear-gradient(to right, #001f3f, #0074d9); color: white; text-align: center; padding: 60px 20px; }
-    header h1 { font-size: 3em; margin-bottom: 10px; }
-    header p { font-size: 1.2em; }
-    nav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 15px 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 999; }
-    nav .logo { font-size: 1.4em; font-weight: 700; color: #001f3f; }
-    nav ul { list-style: none; display: flex; gap: 20px; }
-    nav ul li a { text-decoration: none; color: #333; font-weight: 600; transition: 0.2s; }
-    nav ul li a:hover { color: #0074d9; }
-    nav .lang-buttons button { margin-left: 10px; padding: 6px 12px; border: none; background-color: #0074d9; color: white; border-radius: 4px; cursor: pointer; }
-    section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-    section h2 { font-size: 2em; color: #001f3f; margin-bottom: 20px; text-align: center; }
-    section p, section ul { font-size: 1.1em; max-width: 900px; margin: auto; }
-    ul li { margin-bottom: 10px; }
-    .cta { display: block; text-align: center; margin: 30px auto 0; background: #ff4136; color: white; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 1.1em; text-decoration: none; width: fit-content; }
-    .cta:hover { background: #e63b2e; }
-    footer { background: #001f3f; color: white; text-align: center; padding: 40px 20px; font-size: 0.9em; }
-    footer a { color: #7FDBFF; margin: 0 8px; text-decoration: none; font-weight: bold; }
-    .roadmap .step { margin-bottom: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .step h3 { margin-bottom: 10px; color: #0074d9; }
-    .highlight { background: #e8f5ff; padding: 10px; border-left: 4px solid #0074d9; margin: 20px 0; }
-  </style>
+  <title>Husky FC - Web3 Football Club</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <nav>
-    <div class="logo">Husky FC</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#nft">NFT</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#community">Community</a></li>
-      <li><a href="#token">Token</a></li>
-    </ul>
-    <div class="lang-buttons">
-      <button onclick="alert('Coming soon')">PT</button>
-      <button onclick="alert('You are in English')">EN</button>
-      <button onclick="alert('Próximamente')">ES</button>
-    </div>
-  </nav>
-
   <header>
-    <h1>Husky FC</h1>
-    <p>The first decentralized football club built by the community.</p>
-    <a class="cta" href="#nft">Become a Founding Fan</a>
+    <h1>⚽ Husky Futebol Clube</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#nft">NFT Supporter</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#token">Token</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section id="about">
-    <h2>🏟️ About the Project</h2>
-    <p>
-      Husky FC is more than a club — it's a revolution in football. No borders, no owners, no promises of profit. Just pure community spirit, powered by Web3.
-    </p>
-    <p class="highlight">
-      The club has no defined country. Fans will decide where and how it will be born.
-    </p>
+    <h2>About the Project</h2>
+    <p>Husky FC is the world's first football club created and funded entirely by a community through cryptocurrency and NFTs. Built on the Shibarium network, it's a decentralized, transparent, and inclusive movement. The club starts with its own stadium and is governed by DAO voting — fans are in control.</p>
   </section>
 
   <section id="nft">
-    <h2>🎫 Fan NFT</h2>
-    <p>
-      Support the project by buying the official Fan NFT. It's unlimited and symbolic. Holders will be eternally recognized as pioneers.
-    </p>
-    <ul>
-      <li>✔️ Symbol of support</li>
-      <li>✔️ Future exclusive Discord role</li>
-      <li>✔️ You help build the club step by step</li>
-    </ul>
-    <a class="cta" href="#">Buy Fan NFT</a>
+    <h2>🎟️ NFT Supporter Access</h2>
+    <p>Support the project by minting your NFT. Founding NFTs unlock exclusive access and future privileges within the community. All verification is done manually during the initial phase.</p>
   </section>
 
   <section id="roadmap">
-    <h2>📈 Roadmap</h2>
-    <div class="step">
-      <h3>Phase 1 – US$10,000</h3>
-      <p>Website, branding, and launch campaign</p>
-    </div>
-    <div class="step">
-      <h3>Phase 2 – US$20,000</h3>
-      <p>Launch token, start community governance, build team</p>
-    </div>
-    <div class="step">
-      <h3>Phase 3 – US$60,000</h3>
-      <p>Coach, uniforms, first players</p>
-    </div>
-    <div class="step">
-      <h3>Phase 4 – US$80,000</h3>
-      <p>Infrastructure: training field</p>
-    </div>
-    <div class="step">
-      <h3>Phase 5 – US$120,000</h3>
-      <p>Operational fund for 1 full season</p>
-    </div>
-    <div class="step">
-      <h3>Phase 6 – US$160,000</h3>
-      <p>Official jersey + online store</p>
-    </div>
-    <div class="step">
-      <h3>Phase 7 – US$200,000</h3>
-      <p>Mass marketing and token listing</p>
-    </div>
-  </section>
-
-  <section id="community">
-    <h2>🤝 Join the Community</h2>
-    <p>
-      Connect with us, ask questions, and help shape Husky FC.
-    </p>
-    <p style="text-align:center">
-      <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">📱 Telegram</a> |
-      <a href="https://www.tiktok.com/@huskyf.c" target="_blank">🎥 TikTok</a>
-    </p>
+    <h2>🗺️ Roadmap</h2>
+    <ul>
+      <li><strong>Phase 1:</strong> Community building, website launch, NFT supporter release – <strong>US$0</strong></li>
+      <li><strong>Phase 2:</strong> Token deployment on Shibarium, locking mechanism until soft cap – <strong>US$20,000</strong></li>
+      <li><strong>Phase 3:</strong> Marketing push, team building, stadium concept draft – <strong>US$50,000</strong></li>
+      <li><strong>Phase 4:</strong> Investment in physical and digital infrastructure, DAO voting system – <strong>US$100,000</strong></li>
+    </ul>
   </section>
 
   <section id="token">
-    <h2>🚧 Token Coming Soon</h2>
+    <h2>💰 Token: SFC</h2>
+    <p>SFC is the official token of Husky FC, launched on Shibarium. It will be locked for transfers/sales until the minimum capital is raised. Community-governed and publicly transparent, funds will be distributed as follows:</p>
+    <ul>
+      <li>60% – Football infrastructure and operations</li>
+      <li>10% – Marketing and promotion</li>
+      <li>10% – Team and development</li>
+      <li>10% – Operational costs</li>
+      <li>10% – Emergency reserve</li>
+    </ul>
+  </section>
+
+  <section id="community">
+    <h2>🌐 Community & Access</h2>
+    <p>Holders of NFTs or tokens will have access to exclusive voting, perks and governance rights. Telegram and Discord integration will follow — join us and shape football history.</p>
     <p>
-      The Husky FC token will only be launched once we reach the first funding goal. It will be locked until sufficient capital is raised. Details will be public and auditable.
+      🔗 <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Join Telegram</a><br />
+      🎥 <a href="https://www.tiktok.com/@huskyf.c?_t=ZM-8xdqeryw9hd&_r=1" target="_blank">Follow on TikTok</a>
     </p>
   </section>
 
   <footer>
-    <p>© 2025 Husky FC — Built by dreamers, not owners. 100% community funded. No profit promises. Fully transparent.</p>
+    <p>© 2025 Husky FC. All rights reserved. Built by the community, for the world. 🐾</p>
   </footer>
 </body>
 </html>
