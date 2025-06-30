@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +10,23 @@
     header { background: linear-gradient(to right, #001f3f, #0074d9); color: white; text-align: center; padding: 60px 20px; }
     header h1 { font-size: 3em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
     header p { font-size: 1.2em; max-width: 700px; margin: auto; }
-    nav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px 20px; }
-    nav button, nav a { margin-left: 10px; padding: 6px 12px; border: none; background: #001f3f; color: white; font-weight: bold; cursor: pointer; border-radius: 5px; text-decoration: none; }
+    nav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px 20px; flex-wrap: wrap; }
+    nav button, nav a { margin: 5px 10px 5px 0; padding: 6px 12px; border: none; background: #001f3f; color: white; font-weight: bold; cursor: pointer; border-radius: 5px; text-decoration: none; }
     section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
     .section-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-bottom: 30px; }
     h2 { color: #001f3f; margin-bottom: 15px; }
     ul li { margin-bottom: 10px; }
-    .cta { background: #ff4136; color: white; font-weight: bold; padding: 15px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; margin-top: 20px; }
     .roadmap { display: flex; flex-direction: column; gap: 20px; }
     .phase { display: flex; align-items: flex-start; padding: 10px; background: #f9f9f9; border-left: 5px solid #0074d9; border-radius: 8px; }
     .phase-icon { font-size: 2em; margin-right: 15px; }
+    .community-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+    .cta { background: #ff4136; color: white; font-weight: bold; padding: 15px 30px; border: none; border-radius: 6px; font-size: 1.1em; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
+    .cta.disabled { opacity: 0.6; cursor: not-allowed; }
     footer { text-align: center; padding: 30px 20px; font-size: 0.9em; color: #666; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      section { padding: 0 10px; }
+    }
   </style>
 </head>
 <body>
@@ -34,23 +39,18 @@
     <div>
       <a href="https://www.tiktok.com/@huskyf.c" target="_blank">🎥 TikTok</a>
       <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">📣 Telegram</a>
+      <a href="#" class="disabled">💬 Discord (Coming Soon)</a>
     </div>
-  </nav>
-
-  <header>
+  </nav>  <header>
     <h1 data-key="title">Husky FC</h1>
     <p data-key="subtitle">The first decentralized football club built by the community. ⚽</p>
     <button class="cta" data-key="cta">Buy your Fan NFT</button>
-  </header>
-
-  <section class="section-box">
+  </header>  <section class="section-box">
     <h2 data-key="about_title">About the Project</h2>
     <p data-key="about_text">
-      Husky FC is a revolutionary football club fully funded by a crypto-powered community. Every fan becomes a co-creator through NFTs, voting rights, and future DAO governance. Starting digitally, we grow into a real team—with our own infrastructure and stadium. Transparency, passion and decentralization lead the way.
+      Husky FC is a revolutionary football club fully funded by a crypto-powered community. Every fan becomes a co-creator through NFTs, voting rights, and future DAO governance. Starting digitally, we grow into a real team—with our own infrastructure and stadium. Transparency, passion, and decentralization lead the way.
     </p>
-  </section>
-
-  <section class="section-box">
+  </section>  <section class="section-box">
     <h2 data-key="nft_title">🎟️ Fan NFT – Your Access Pass</h2>
     <ul>
       <li data-key="nft1">Support the project early and prove you're a believer</li>
@@ -58,9 +58,7 @@
       <li data-key="nft3">Exclusive Discord role in the future DAO</li>
       <li data-key="nft4">Earn community recognition and future perks</li>
     </ul>
-  </section>
-
-  <section class="section-box">
+  </section>  <section class="section-box">
     <h2 data-key="roadmap_title">📈 Roadmap – Phase by Phase</h2>
     <div class="roadmap">
       <div class="phase">
@@ -92,20 +90,24 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="section-box">
-    <h2 data-key="token_title">💰 SFC Token (Coming Soon)</h2>
+  </section>  <section class="section-box">
+    <h2 data-key="token_title">💰 Token (Coming Soon)</h2>
     <p data-key="token_text">
-      The Husky FC ecosystem will be powered by its own token – <strong>SFC</strong>. It will be locked for trading until a minimum funding threshold is met. Funds will be transparently used for marketing, club building, and community tools. Total transparency and community-first design.
+      A dedicated token to power the Husky FC ecosystem will be launched soon. Stay tuned for details!
     </p>
-  </section>
-
-  <footer>
+  </section>  <section class="section-box">
+    <h2 data-key="community_title">🌐 Community</h2>
+    <p data-key="community_text">
+      Join our community to get the latest updates, vote on proposals, and connect with fellow supporters.
+    </p>
+    <div class="community-buttons">
+      <a href="https://t.me/+9_4IHYOLigI2OGIx" class="cta">Join Telegram</a>
+      <a href="https://www.tiktok.com/@huskyf.c" class="cta">Follow on TikTok</a>
+      <a href="#" class="cta disabled">Discord (Coming Soon)</a>
+    </div>
+  </section>  <footer>
     <p data-key="foot">🌐 100% Transparent. All funds tracked via public wallet with monthly reports.</p>
-  </footer>
-
-  <script>
+  </footer>  <script>
     const content = {
       pt: {
         title: "Husky FC",
@@ -127,9 +129,37 @@
         phase3_desc: "Criação do time real, uniformes e comissão técnica",
         phase4: "Fase 4 – US$80.000",
         phase4_desc: "Início da construção do estádio e infraestrutura própria",
-        token_title: "💰 Token SFC (em breve)",
-        token_text: "O ecossistema do Husky FC será movido por seu próprio token – SFC. Ele ficará travado para venda até o financiamento mínimo ser atingido. Os fundos serão usados com transparência para marketing, formação do clube e ferramentas da comunidade.",
+        token_title: "💰 Token (Em breve)",
+        token_text: "Um token dedicado para impulsionar o ecossistema Husky FC será lançado em breve. Fique ligado para mais detalhes!",
+        community_title: "🌐 Comunidade",
+        community_text: "Junte-se à nossa comunidade para receber as últimas atualizações, votar em propostas e conectar-se com outros apoiadores.",
         foot: "🌐 100% Transparente. Todos os fundos serão rastreados em carteira pública com relatórios mensais."
+      },
+      en: {
+        title: "Husky FC",
+        subtitle: "The first decentralized football club built by the community. ⚽",
+        cta: "Buy your Fan NFT",
+        about_title: "About the Project",
+        about_text: "Husky FC is a revolutionary football club fully funded by a crypto-powered community. Every fan becomes a co-creator through NFTs, voting rights, and future DAO governance. Starting digitally, we grow into a real team—with our own infrastructure and stadium. Transparency, passion, and decentralization lead the way.",
+        nft_title: "🎟️ Fan NFT – Your Access Pass",
+        nft1: "Support the project early and prove you're a believer",
+        nft2: "Be immortalized as a founding supporter",
+        nft3: "Exclusive Discord role in the future DAO",
+        nft4: "Earn community recognition and future perks",
+        roadmap_title: "📈 Roadmap – Phase by Phase",
+        phase1: "Phase 1 – US$10,000",
+        phase1_desc: "Token launch, official website and viral marketing campaign",
+        phase2: "Phase 2 – US$20,000",
+        phase2_desc: "Digital team formation, visual identity, and community voting system",
+        phase3: "Phase 3 – US$60,000",
+        phase3_desc: "Launch of the real football team, uniforms and coaching staff",
+        phase4: "Phase 4 – US$80,000",
+        phase4_desc: "Begin development of Husky FC’s own stadium and infrastructure",
+        token_title: "💰 Token (Coming Soon)",
+        token_text: "A dedicated token to power the Husky FC ecosystem will be launched soon. Stay tuned for details!",
+        community_title: "🌐 Community",
+        community_text: "Join our community to get the latest updates, vote on proposals, and connect with fellow supporters.",
+        foot: "🌐 100% Transparent. All funds tracked via public wallet with monthly reports."
       },
       es: {
         title: "Husky FC",
@@ -143,28 +173,27 @@
         nft3: "Rol exclusivo en Discord DAO",
         nft4: "Reconocimiento y futuras recompensas",
         roadmap_title: "📈 Hoja de Ruta – Fase por Fase",
-        phase1: "Fase 1 – US$10,000",
+        phase1: "Fase 1 – US$10.000",
         phase1_desc: "Lanzamiento del token, sitio web oficial y marketing inicial",
-        phase2: "Fase 2 – US$20,000",
+        phase2: "Fase 2 – US$20.000",
         phase2_desc: "Formación del equipo digital, identidad visual y votaciones",
-        phase3: "Fase 3 – US$60,000",
+        phase3: "Fase 3 – US$60.000",
         phase3_desc: "Lanzamiento del equipo real, uniformes y cuerpo técnico",
-        phase4: "Fase 4 – US$80,000",
+        phase4: "Fase 4 – US$80.000",
         phase4_desc: "Inicio del desarrollo del estadio de Husky FC",
-        token_title: "💰 Token SFC (Próximamente)",
-        token_text: "El ecosistema de Husky FC se alimentará con su propio token – SFC. Estará bloqueado para su comercio hasta alcanzar el financiamiento mínimo. Uso transparente para marketing, club y comunidad.",
+        token_title: "💰 Token (Próximamente)",
+        token_text: "Un token dedicado para impulsar el ecosistema de Husky FC se lanzará pronto. ¡Mantente atento para más detalles!",
+        community_title: "🌐 Comunidad",
+        community_text: "Únete a nuestra comunidad para recibir las últimas actualizaciones, votar en propuestas y conectar con otros seguidores.",
         foot: "🌐 100% Transparente. Todos los fondos se rastrearán mediante billetera pública y reportes mensuales."
       }
     };
-
     function setLang(lang) {
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-key]').forEach(el => {
         el.textContent = content[lang][el.getAttribute('data-key')];
       });
     }
-
     setLang('en');
-  </script>
-</body>
+  </script></body>
 </html>
