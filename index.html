@@ -1,185 +1,146 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Husky FC – Fan NFT Oficial</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Husky FC - Clube Descentralizado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Montserrat', sans-serif; margin:0; padding:0; color:#222; background:#f4f4f4;}
-    header { background:#003366; color:#fff; padding:60px 20px; text-align:center;}
-    header h1 { margin:0; font-size:2.8em; letter-spacing:2px; }
-    header p { margin-top:10px; font-size:1.2em; }
-    .cta { background:#ff8c00; border:none; padding:15px 40px; margin:20px 0; font-size:1.2em; cursor:pointer; border-radius:5px;}
-    nav { text-align:right; padding:10px 20px; background:#eee;}
-    nav button { margin-left:10px; padding:5px 10px; cursor:pointer; }
-    section { max-width:900px; margin:auto; padding:40px 20px; background:#fff; margin-bottom:20px; border-radius:8px;}
-    .roadmap h2 { margin-bottom:20px; }
-    .phase { margin-bottom:30px; }
-    .phase h3 { color:#003366; }
-    .progress-bar { background:#ddd; height:20px; border-radius:10px; margin:10px 0; overflow:hidden;}
-    .progress { background:#003366; height:100%; width:0%; }
-    footer { text-align:center; padding:20px; font-size:0.9em; color:#555;}
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f2f5;
+      color: #222;
+    }
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    nav {
+      background-color: #f7f7f7;
+      text-align: right;
+      padding: 10px 20px;
+    }
+    nav button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      border: none;
+      background-color: #ddd;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .section-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #001f3f;
+      margin-bottom: 15px;
+    }
+    .cta {
+      background-color: #ff4136;
+      color: white;
+      font-weight: bold;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .roadmap .step {
+      margin-bottom: 25px;
+    }
+    .step-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .progress-container {
+      background-color: #e1e1e1;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .progress-bar {
+      background-color: #0074d9;
+      height: 100%;
+      width: 0%;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <button onclick="setLang('pt')">PT</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+  </nav>  <header>
+    <h1 data-key="title">Husky FC</h1>
+    <p data-key="subtitle">O primeiro clube de futebol descentralizado criado pela comunidade</p>
+    <button class="cta" data-key="cta">Compre sua Fan NFT</button>
+  </header>  <section class="section-box">
+    <h2 data-key="how_title">Como Funciona</h2>
+    <p data-key="how_1">1. Adquira a Fan NFT por um valor simbólico</p>
+    <p data-key="how_2">2. Mostre que você acredita no futuro do Husky FC</p>
+    <p data-key="how_3">3. Participe das fases de construção do time</p>
+    <p data-key="how_4">4. Ganhe reconhecimento no Discord futuramente</p>
+  </section>  <section class="section-box roadmap">
+    <h2 data-key="roadmap_title">Roadmap</h2><div class="step">
+  <div class="step-title" data-key="phase1">Fase 1 - R$50.000</div>
+  <div data-key="phase1_desc">Token, site oficial e marketing inicial</div>
+  <div class="progress-container"><div id="p1" class="progress-bar"></div></div>
+</div>
 
-<nav>
-  <button onclick="setLang('pt')">PT</button>
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('es')">ES</button>
-</nav>
+<div class="step">
+  <div class="step-title" data-key="phase2">Fase 2 - R$100.000</div>
+  <div data-key="phase2_desc">Time digital, identidade, governança comunitária</div>
+  <div class="progress-container"><div id="p2" class="progress-bar"></div></div>
+</div>
 
-<header>
-  <h1 data-key="title">Husky FC – Fan NFT Oficial</h1>
-  <p data-key="subtitle">Torça, apoie e faça parte da fundação do time descentralizado.</p>
-  <button class="cta" data-key="cta">Adquirir minha Fan NFT</button>
-</header>
+<div class="step">
+  <div class="step-title" data-key="phase3">Fase 3 - R$300.000</div>
+  <div data-key="phase3_desc">Criação do time real, uniformes, comissão técnica</div>
+  <div class="progress-container"><div id="p3" class="progress-bar"></div></div>
+</div>
 
-<section>
-  <h2 data-key="how_title">Como Funciona</h2>
-  <ol>
-    <li data-key="how_1">Adquira sua Fan NFT por R$ 30–50</li>
-    <li data-key="how_2">Mostre seu apoio ao Husky FC</li>
-    <li data-key="how_3">Seja reconhecido como torcedor fundador</li>
-    <li data-key="how_4">Futuramente receba um cargo exclusivo no Discord</li>
-  </ol>
-</section>
+<div class="step">
+  <div class="step-title" data-key="phase4">Fase 4 - R$400.000</div>
+  <div data-key="phase4_desc">Projeto de infraestrutura própria (estádio)</div>
+  <div class="progress-container"><div id="p4" class="progress-bar"></div></div>
+</div>
 
-<section class="roadmap">
-  <h2 data-key="roadmap_title">Roadmap de Arrecadação</h2>
-
-  <div class="phase">
-    <h3 data-key="phase1">Fase 1 – R$ 50.000</h3>
-    <p data-key="phase1_desc">Token + marketing + site + comunidade inicial</p>
-    <div class="progress-bar"><div id="p1" class="progress"></div></div>
-  </div>
-
-  <div class="phase">
-    <h3 data-key="phase2">Fase 2 – R$ 100.000</h3>
-    <p data-key="phase2_desc">Governança digital (DAO) e estrutura administrativa</p>
-    <div class="progress-bar"><div id="p2" class="progress"></div></div>
-  </div>
-
-  <div class="phase">
-    <h3 data-key="phase3">Fase 3 – R$ 300.000</h3>
-    <p data-key="phase3_desc">Time real: elenco, comissão, treinos</p>
-    <div class="progress-bar"><div id="p3" class="progress"></div></div>
-  </div>
-
-  <div class="phase">
-    <h3 data-key="phase4">Fase 4 – R$ 400.000</h3>
-    <p data-key="phase4_desc">Infraestrutura esportiva: arquibancadas e iluminação</p>
-    <div class="progress-bar"><div id="p4" class="progress"></div></div>
-  </div>
-</section>
-
-<section>
-  <h2 data-key="benefits_title">Benefícios da Fan NFT</h2>
-  <ul>
-    <li data-key="benefit1">Demonstração de apoio desde o início</li>
-    <li data-key="benefit2">Reconhecimento eterno como torcedor fundador</li>
-    <li data-key="benefit3">Promessa de cargo exclusivo no Discord</li>
-    <li data-key="benefit4">Engajamento real na construção do clube</li>
-  </ul>
-</section>
-
-<footer>
-  <p data-key="foot">Todos os fundos são públicos e usados com transparência. Relatórios mensais disponíveis.</p>
-</footer>
-
-<script>
-const content = {
-  pt: {
-    title: "Husky FC – Fan NFT Oficial",
-    subtitle: "Torça, apoie e faça parte da fundação do time descentralizado.",
-    cta: "Adquirir minha Fan NFT",
-    how_title: "Como Funciona",
-    how_1: "Adquira sua Fan NFT por R$ 30–50",
-    how_2: "Mostre seu apoio ao Husky FC",
-    how_3: "Seja reconhecido como torcedor fundador",
-    how_4: "Futuramente receba um cargo exclusivo no Discord",
-    roadmap_title: "Roadmap de Arrecadação",
-    phase1: "Fase 1 – R$ 50.000",
-    phase1_desc: "Token + marketing + site + comunidade inicial",
-    phase2: "Fase 2 – R$ 100.000",
-    phase2_desc: "Governança digital (DAO) e estrutura administrativa",
-    phase3: "Fase 3 – R$ 300.000",
-    phase3_desc: "Time real: elenco, comissão, treinos",
-    phase4: "Fase 4 – R$ 400.000",
-    phase4_desc: "Infraestrutura esportiva: arquibancadas e iluminação",
-    benefits_title: "Benefícios da Fan NFT",
-    benefit1: "Demonstração de apoio desde o início",
-    benefit2: "Reconhecimento eterno como torcedor fundador",
-    benefit3: "Promessa de cargo exclusivo no Discord",
-    benefit4: "Engajamento real na construção do clube",
-    foot: "Todos os fundos são públicos e usados com transparência. Relatórios mensais disponíveis."
-  },
-  en: {
-    title: "Husky FC – Official Fan NFT",
-    subtitle: "Support and join the foundation of the decentralized club.",
-    cta: "Get my Fan NFT",
-    how_title: "How It Works",
-    how_1: "Buy your Fan NFT for R$ 30–50",
-    how_2: "Show your support for Husky FC",
-    how_3: "Be recognized as a founding fan",
-    how_4: "Future Discord role when tech is ready",
-    roadmap_title: "Fundraising Roadmap",
-    phase1: "Phase 1 – R$ 50,000",
-    phase1_desc: "Token + marketing + website + initial community",
-    phase2: "Phase 2 – R$ 100,000",
-    phase2_desc: "Digital governance (DAO) & administrative structure",
-    phase3: "Phase 3 – R$ 300,000",
-    phase3_desc: "Real team: roster, staff, training",
-    phase4: "Phase 4 – R$ 400,000",
-    phase4_desc: "Initial infrastructure: stands & lighting",
-    benefits_title: "Fan NFT Benefits",
-    benefit1: "Show your support from day one",
-    benefit2: "Eternal recognition as founding fan",
-    benefit3: "Future Discord role",
-    benefit4: "Real engagement building the club",
-    foot: "All funds are public and used transparently. Monthly reports available."
-  },
-  es: {
-    title: "Husky FC – NFT Oficial de Fan",
-    subtitle: "Apoya y únete a la fundación del club descentralizado.",
-    cta: "Obtener mi Fan NFT",
-    how_title: "Cómo Funciona",
-    how_1: "Compra tu Fan NFT por R$ 30–50",
-    how_2: "Demuestra tu apoyo a Husky FC",
-    how_3: "Sé reconocido como fan fundador",
-    how_4: "Rol futuro en Discord cuando la tecnología esté lista",
-    roadmap_title: "Hoja de Ruta de Recaudación",
-    phase1: "Fase 1 – R$ 50.000",
-    phase1_desc: "Token + marketing + sitio web + comunidad inicial",
-    phase2: "Fase 2 – R$ 100.000",
-    phase2_desc: "Gobernanza digital (DAO) y estructura administrativa",
-    phase3: "Fase 3 – R$ 300.000",
-    phase3_desc: "Equipo real: plantilla, staff, entrenamientos",
-    phase4: "Fase 4 – R$ 400.000",
-    phase4_desc: "Infraestructura inicial: graderías e iluminación",
-    benefits_title: "Beneficios del Fan NFT",
-    benefit1: "Demuestra tu apoyo desde el día uno",
-    benefit2: "Reconocimiento eterno como fan fundador",
-    benefit3: "Rol futuro en Discord",
-    benefit4: "Compromiso real en la construcción del club",
-    foot: "Todos los fondos son públicos y usados con transparencia. Informes mensuales disponibles."
-  }
-};
-
-function setLang(lang) {
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-key]').forEach(el => {
-    el.textContent = content[lang][el.getAttribute('data-key')];
-  });
-}
-
-// Barra de progresso estática de exemplo:
-const arrecadado = 60000; 
-const metas = [50000,100000,300000,400000];
-metas.forEach((m,i) => {
-  document.getElementById('p'+(i+1)).style.width = Math.min(arrecadado, m)/m*100 + '%';
-});
-</script>
-
-</body>
+  </section>  <footer>
+    <p data-key="foot">Transparência total. Todos os recursos serão divulgados com carteira pública e relatórios mensais.</p>
+  </footer>  <script>
+    const arrecadado = 60000;
+    const metas = [50000, 100000, 300000, 400000];
+    metas.forEach((meta, i) => {
+      const pct = Math.min((arrecadado / meta) * 100, 100);
+      document.getElementById(`p${i + 1}`).style.width = pct + '%';
+    });
+  </script></body>
 </html>
