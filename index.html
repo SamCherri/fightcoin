@@ -21,15 +21,19 @@
       background: var(--primary);
       color: white;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 24px;
       flex-wrap: wrap;
+      padding: 12px 24px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .nav-left, .nav-right { display: flex; align-items: center; flex-wrap: wrap; }
+    .nav-left, .nav-right {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .lang-btn {
-      margin-right: 12px;
+      margin: 6px;
       padding: 6px 12px;
       background: var(--button-bg);
       color: var(--text-color);
@@ -41,8 +45,6 @@
     }
     .lang-btn:hover { background: var(--button-hover); }
     .btn-social {
-      display: flex;
-      align-items: center;
       margin: 6px;
       padding: 8px 16px;
       background: var(--button-bg);
@@ -60,18 +62,9 @@
       text-align: center;
       padding: 100px 20px;
     }
-    header h1 {
-      font-size: 2.8em;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.1em;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.5;
-    }
-    .cta-main, .buy-nft-btn {
+    header h1 { font-size: 2.8em; letter-spacing: 2px; margin-bottom: 10px; }
+    header p { font-size: 1.1em; max-width: 700px; margin: auto; line-height: 1.5; }
+    .cta-main {
       display: inline-block;
       margin-top: 24px;
       padding: 14px 28px;
@@ -85,12 +78,8 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-    .cta-main:hover, .buy-nft-btn:hover { background: #f4cf00; }
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
+    .cta-main:hover { background: #f4cf00; }
+    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
     .section-box {
       background: white;
       padding: 30px;
@@ -98,28 +87,20 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       margin-bottom: 40px;
     }
-    h2 {
-      color: var(--primary);
-      margin-bottom: 16px;
-      font-size: 1.6em;
-    }
+    h2 { color: var(--primary); margin-bottom: 16px; font-size: 1.6em; }
     ul li { margin-bottom: 10px; line-height: 1.6; }
-    .roadmap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+    .roadmap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .phase {
       background: #f9f9f9;
       padding: 16px 20px;
       border-left: 6px solid var(--secondary);
       border-radius: 8px;
     }
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9em;
-      color: #666;
+    footer { text-align: center; padding: 30px 20px; font-size: 0.9em; color: #666; }
+    @media (max-width: 768px) {
+      nav { flex-direction: column; }
+      .nav-left, .nav-right { flex: none; justify-content: center; margin: 8px 0; }
+      header { padding: 80px 10px; }
     }
   </style>
 </head>
@@ -149,7 +130,7 @@
       <li data-key="nft2">Be forever recognized as a founding supporter</li>
       <li data-key="nft3">Exclusive future Discord DAO role</li>
     </ul>
-    <a id="buy" href="#" class="buy-nft-btn">Buy Now</a>
+    <a id="buy" href="#" class="cta-main" data-key="cta">Buy Fan NFT</a>
   </section>  <section class="section-box">
     <h2 data-key="roadmap_title">📈 Roadmap</h2>
     <div class="roadmap">
@@ -199,14 +180,57 @@
         token_title: "💰 Token (Coming Soon)",
         token_text: "A token will power the Husky FC ecosystem. It will be locked until the minimum fund is reached. Full transparency and community-first structure.",
         foot: "🌐 100% Transparent. All funds tracked via public wallet with monthly reports."
+      },
+      pt: {
+        title: "Husky FC",
+        subtitle: "O primeiro clube de futebol descentralizado criado pela comunidade. ⚽",
+        cta: "Comprar Fan NFT",
+        about_title: "Sobre o Projeto",
+        about_text: "Husky FC é um clube revolucionário financiado por uma comunidade via criptomoeda. Cada torcedor é co-criador via NFTs, votos e futura governança DAO. Começamos digitalmente e cresceremos até sermos um time real com nossa própria infraestrutura. Transparência, paixão e descentralização guiam nossa missão.",
+        nft_title: "🎟️ Fan NFT – Seu Passe",
+        nft1: "Apoie cedo e mostre sua crença",
+        nft2: "Eternize-se como apoiador fundador",
+        nft3: "Cargo exclusivo no futuro Discord DAO",
+        roadmap_title: "📈 Roadmap",
+        phase1: "Fase 1 – US$10.000",
+        phase1_desc: "Lançamento do token, site oficial e campanha de marketing.",
+        phase2: "Fase 2 – US$20.000",
+        phase2_desc: "Time digital, identidade e sistema de governança comunitária.",
+        phase3: "Fase 3 – US$60.000",
+        phase3_desc: "Lançamento do time real, uniformes e comissão técnica.",
+        phase4: "Fase 4 – US$80.000",
+        phase4_desc: "Desenvolvimento do nosso próprio estádio e centro de treinamento.",
+        token_title: "💰 Token (Em breve)",
+        token_text: "Um token impulsionará o ecossistema Husky FC. Ficará travado até atingir o fundo mínimo. Transparência total e estrutura comunitária.",
+        foot: "🌐 100% Transparente. Todos os fundos rastreados em carteira pública com relatórios mensais."
+      },
+      es: {
+        title: "Husky FC",
+        subtitle: "El primer club de fútbol descentralizado creado por la comunidad. ⚽",
+        cta: "Comprar Fan NFT",
+        about_title: "Sobre el Proyecto",
+        about_text: "Husky FC es un club revolucionario financiado por una comunidad criptográfica. Cada fan es co-creador vía NFTs, votos y futura gobernanza DAO. Comenzamos digitalmente y crecemos hasta ser un equipo real con nuestra propia infraestructura. Transparencia, pasión y descentralización guían nuestra misión.",
+        nft_title: "🎟️ Fan NFT – Tu Pase",
+        nft1: "Apoya temprano y demuestra tu fe",
+        nft2: "Sé inmortalizado como fan fundador",
+        nft3: "Cargo exclusivo en el futuro Discord DAO",
+        roadmap_title: "📈 Hoja de Ruta",
+        phase1: "Fase 1 – US$10.000",
+        phase1_desc: "Lanzamiento del token, sitio oficial y campaña de marketing.",
+        phase2: "Fase 2 – US$20.000",
+        phase2_desc: "Equipo digital, identidad y sistema de gobernanza comunitaria.",
+        phase3: "Fase 3 – US$60.000",
+        phase3_desc: "Lanzamiento del equipo real, uniformes y cuerpo técnico.",
+        phase4: "Fase 4 – US$80.000",
+        phase4_desc: "Desarrollo de nuestro propio estadio y centro de entrenamiento.",
+        token_title: "💰 Token (Próximamente)",
+        token_text: "Un token impulsionará el ecosistema Husky FC. Estará bloqueado hasta alcanzar el fondo mínimo. Transparencia total y estructura comunitaria.",
+        foot: "🌐 100% Transparente. Todos los fondos rastreados en billetera pública con reportes mensuales."
       }
-      // You can add pt and es versions here
     };
-
     function setLang(lang) {
-      const langContent = content[lang];
-      if (!langContent) return;
       document.documentElement.lang = lang;
+      const langContent = content[lang] || content.en;
       document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (langContent[key]) el.textContent = langContent[key];
