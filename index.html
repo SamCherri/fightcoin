@@ -1,157 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Husky FC - Decentralized Football Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Husky FC — Join the Web3 Football Movement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-      color: #f4f4f4;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: #0d0d0d;
-      padding: 1rem;
-      text-align: center;
-      animation: fadeIn 1.5s ease-out;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #00f7ff;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin-top: 1rem;
-      flex-wrap: wrap;
-    }
-    nav li {
-      margin: 0.5rem 1rem;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #00f7ff;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 960px;
-      margin: auto;
-      animation: slideUp 1s ease;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #00f7ff;
-    }
-    p, ul {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    ul li {
-      margin: 0.5rem 0;
-    }
-    footer {
-      background: #0d0d0d;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
-    }
-    a {
-      color: #00f7ff;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      section {
-        padding: 2rem 1rem;
-      }
-    }
+    /* Reset & Base */
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {font-family:'Inter', sans-serif; background: #0a0a0a; color:#eee; line-height:1.6; scroll-behavior:smooth;}
+    a {color:#00f7ff; text-decoration:none;}
+    img {max-width:100%; display:block;}
+    /* Navbar */
+    header {position:fixed; width:100%; background:#111; z-index:100; animation:fadeInDown 1s;}
+    .container {max-width:1200px; margin:auto; padding:0 1rem;}
+    .nav {display:flex; align-items:center; justify-content:space-between; height:60px;}
+    .logo {font-family:'Orbitron',sans-serif; font-size:1.5rem; color:#00f7ff;}
+    .menu {display:flex; gap:1.5rem;}
+    .menu a {font-weight:600; transition:color .3s;}
+    .menu a:hover {color:#fff;}
+    /* Hero */
+    .hero {display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; text-align:center; background:linear-gradient(rgba(10,10,10,0.6),rgba(10,10,10,0.6)), url('https://example.com/stadium.jpg') center/cover no-repeat;}
+    .hero h1 {font-family:'Orbitron',sans-serif; font-size:3rem; color:#00f7ff; text-transform:uppercase; animation:glow 2s infinite alternate;}
+    .hero p {margin-top:1rem; font-size:1.2rem; max-width:700px;}
+    .btn {margin-top:2rem; background:#00f7ff; color:#111; font-weight:700; padding:0.8rem 2rem; border-radius:30px; transition:background .3s;}
+    .btn:hover {background:#fff;}
+    /* Sections */
+    section {padding:4rem 0;}
+    .section-title {font-family:'Orbitron',sans-serif; font-size:2rem; color:#00f7ff; text-align:center; margin-bottom:2rem;}
+    .cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;}
+    .card {background:#1a1a1a; padding:2rem; border-radius:12px; animation:fadeInUp .8s both;}
+    .card h3 {font-size:1.5rem; margin-bottom:1rem; color:#00f7ff;}
+    .card p {font-size:1rem;}
+    /* Footer */
+    footer {background:#111; text-align:center; padding:2rem; font-size:.9rem;}
+    /* Animations */
+    @keyframes glow {from {text-shadow:0 0 10px #00f7ff;} to {text-shadow:0 0 20px #00f7ff;}}
+    @keyframes fadeInDown {from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeInUp {from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    /* Responsive */
+    @media(max-width:768px) {.hero h1 {font-size:2.5rem;} .menu {display:none;} .nav {justify-content:space-between;} }
   </style>
 </head>
 <body>
   <header>
-    <h1>⚽ Husky FC – Web3 Football Revolution</h1>
-    <nav>
+    <div class="container nav">
+      <div class="logo">Husky FC</div>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#why">Why Join</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#token">Token</a>
+        <a href="#community">Community</a>
+      </nav>
+    </div>
+  </header>  <div class="hero">
+    <h1>Join the Web3 Football Revolution</h1>
+    <p>Be part of the world’s first football club fully owned by its supporters. Mint your NFT, govern decisions through DAO votes and help us build history.</p>
+    <a href="#nft" class="btn">Mint Your NFT</a>
+  </div>  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Why Join Husky FC?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>True Ownership</h3>
+          <p>Each NFT & token holder has real voting power. Decide on kit designs, stadium upgrades and more.</p>
+        </div>
+        <div class="card">
+          <h3>Exclusive Benefits</h3>
+          <p>Access to VIP events, merchandise drops and direct interaction with players and staff.</p>
+        </div>
+        <div class="card">
+          <h3>Transparent Funding</h3>
+          <p>All treasury funds are publicly visible on Shibarium, with clear allocation and regular on-chain audits.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <section id="roadmap">
+    <div class="container">
+      <h2 class="section-title">Roadmap</h2>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#nft">NFT</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#token">Token</a></li>
-        <li><a href="#community">Community</a></li>
+        <li><strong>Phase 1:</strong> Brand & community launch, NFT mint — <strong>US$0</strong></li>
+        <li><strong>Phase 2:</strong> Token deployment on Shibarium, locking until soft cap — <strong>US$20K</strong></li>
+        <li><strong>Phase 3:</strong> Marketing push, team & stadium concept — <strong>US$50K</strong></li>
+        <li><strong>Phase 4:</strong> DAO governance tool, infrastructure rollout — <strong>US$100K</strong></li>
       </ul>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>🌍 About the Project</h2>
-    <p>Husky FC is the world's first community-built football club powered by cryptocurrency and NFTs. Developed on the Shibarium network, it’s a decentralized, borderless and transparent ecosystem. Governed by DAO principles, the club starts with its own stadium and a clear mission: build football history with the people in control.</p>
-  </section>
-
-  <section id="nft">
-    <h2>🎟️ NFT Supporter Pass</h2>
-    <p>Be among the first to mint an exclusive Founder or Supporter NFT. These assets unlock access to future perks, early voting rights, and community leadership. All verification is currently manual, with Discord roles and web3 access coming soon.</p>
-  </section>
-
-  <section id="roadmap">
-    <h2>🗺️ Roadmap</h2>
-    <ul>
-      <li><strong>Phase 1:</strong> Brand launch, community onboarding, NFT supporter release — <strong>US$0</strong></li>
-      <li><strong>Phase 2:</strong> Token deployment on Shibarium, token locked until soft cap — <strong>US$20,000</strong></li>
-      <li><strong>Phase 3:</strong> Initial marketing wave, concept design for team & stadium — <strong>US$50,000</strong></li>
-      <li><strong>Phase 4:</strong> DAO voting system, infrastructure build, platform integrations — <strong>US$100,000</strong></li>
-    </ul>
-  </section>
-
-  <section id="token">
-    <h2>💰 Token: $SFC</h2>
-    <p>$SFC is the official utility token of Husky FC, launched on the Shibarium blockchain. It remains locked until the initial capital goal is reached. All funds are traceable, and the treasury is community-governed.</p>
-    <ul>
-      <li>60% – Football infrastructure and operations</li>
-      <li>10% – Marketing and community growth</li>
-      <li>10% – Team and development</li>
-      <li>10% – Platform fees and maintenance</li>
-      <li>10% – Emergency reserve</li>
-    </ul>
-  </section>
-
-  <section id="community">
-    <h2>🌐 Community & Governance</h2>
-    <p>Every NFT or token holder becomes part of the DAO — with rights to vote, suggest ideas and shape the project's future. Join our growing ecosystem on Telegram and TikTok, and stay tuned for Discord and Web3 voting tools.</p>
-    <p>
-      🔗 <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Join Telegram</a><br />
-      🎥 <a href="https://www.tiktok.com/@huskyf.c?_t=ZM-8xdqeryw9hd&_r=1" target="_blank">Follow on TikTok</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Husky FC. A decentralized movement. Built by the people, for the world. 🐾</p>
+    </div>
+  </section>  <section id="token">
+    <div class="container">
+      <h2 class="section-title">Tokenomics $SFC</h2>
+      <p>$SFC is the utility token on Shibarium. Locked until finance goal is met, treasury is DAO-managed:</p>
+      <ul>
+        <li>60% Infrastructure & operations</li>
+        <li>10% Marketing & growth</li>
+        <li>10% Team & development</li>
+        <li>10% Platform fees</li>
+        <li>10% Emergency reserve</li>
+      </ul>
+    </div>
+  </section>  <section id="community">
+    <div class="container">
+      <h2 class="section-title">Join the Community</h2>
+      <p>Connect with fellow supporters, discuss proposals and stay updated:</p>
+      <p>🔗 <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Telegram</a> &nbsp;•&nbsp; 🎥 <a href="https://www.tiktok.com/@huskyf.c" target="_blank">TikTok</a></p>
+    </div>
+  </section>  <footer>
+    <div class="container">
+      <p>© 2025 Husky FC — Built by the community, for the world. 🐾</p>
+    </div>
   </footer>
 </body>
 </html>
