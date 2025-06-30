@@ -27,7 +27,7 @@
       flex-wrap: wrap;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .nav-left, .nav-right { display: flex; align-items: center; }
+    .nav-left, .nav-right { display: flex; align-items: center; flex-wrap: wrap; }
     .lang-btn {
       margin-right: 12px;
       padding: 6px 12px;
@@ -43,7 +43,7 @@
     .btn-social {
       display: flex;
       align-items: center;
-      margin-left: 12px;
+      margin: 6px;
       padding: 8px 16px;
       background: var(--button-bg);
       color: var(--text-color);
@@ -54,7 +54,6 @@
       transition: background 0.3s ease;
     }
     .btn-social:hover { background: var(--button-hover); }
-    .btn-social svg { margin-right: 8px; }
     header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
@@ -73,8 +72,7 @@
       line-height: 1.5;
     }
     .cta-main {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       margin-top: 24px;
       padding: 14px 28px;
       background: var(--accent);
@@ -121,17 +119,10 @@
       padding: 16px 20px;
       border-left: 6px solid var(--secondary);
       border-radius: 8px;
-      display: flex;
-      align-items: flex-start;
     }
     .phase-icon {
       font-size: 2em;
       margin-right: 12px;
-    }
-    .phase strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 1.1em;
     }
     footer {
       text-align: center;
@@ -145,20 +136,69 @@
       }
       nav {
         padding: 10px 16px;
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .lang-btn {
-        margin-right: 8px;
-        padding: 5px 10px;
-      }
-      .btn-social {
-        margin-left: 8px;
-        padding: 6px 12px;
-        font-size: 0.9em;
+      .nav-left, .nav-right {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 8px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- conteúdo HTML permanece igual, apenas estilos foram alterados para nova paleta -->
+  <nav>
+    <div class="nav-left">
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.tiktok.com/@huskyf.c" class="btn-social" target="_blank">TikTok</a>
+      <a href="https://t.me/+9_4IHYOLigI2OGIx" class="btn-social" target="_blank">Telegram</a>
+      <a href="#" class="btn-social" style="opacity:0.6;cursor:not-allowed;">Discord</a>
+    </div>
+  </nav>  <header>
+    <h1 data-key="title">Husky FC</h1>
+    <p data-key="subtitle">O primeiro clube de futebol descentralizado criado pela comunidade. ⚽</p>
+    <a href="#" class="cta-main" data-key="cta">Comprar Fan NFT</a>
+  </header>  <section class="section-box">
+    <h2>Sobre o Projeto</h2>
+    <p>Husky FC é um clube revolucionário financiado por uma comunidade via criptomoeda. Cada torcedor é co-criador via NFTs, votos e futura DAO. Começamos digitalmente e cresceremos até sermos um time real com estádio próprio. Transparência, paixão e descentralização guiam nossa jornada.</p>
+  </section>  <section class="section-box">
+    <h2>🎟️ Fan NFT – Seu Passe</h2>
+    <ul>
+      <li>Apoie cedo e mostre sua crença</li>
+      <li>Eternize-se como apoiador fundador</li>
+      <li>Cargo exclusivo no Discord DAO</li>
+    </ul>
+  </section>  <section class="section-box">
+    <h2>📈 Roadmap</h2>
+    <div class="roadmap">
+      <div class="phase">
+        <strong>Fase 1 – US$10.000</strong>
+        <p>Lançamento do token, site oficial e campanha de marketing.</p>
+      </div>
+      <div class="phase">
+        <strong>Fase 2 – US$20.000</strong>
+        <p>Time digital, identidade e sistema de votação comunitário.</p>
+      </div>
+      <div class="phase">
+        <strong>Fase 3 – US$60.000</strong>
+        <p>Criação do time real, uniformes e comissão técnica.</p>
+      </div>
+      <div class="phase">
+        <strong>Fase 4 – US$80.000</strong>
+        <p>Desenvolvimento do estádio e estrutura própria.</p>
+      </div>
+    </div>
+  </section>  <section class="section-box">
+    <h2>💰 Token (Em breve)</h2>
+    <p>Um token dedicado para impulsionar o ecossistema Husky FC será lançado em breve.</p>
+  </section>  <footer>
+    <p>🌐 100% Transparente. Todos os fundos rastreados em carteira pública com relatórios mensais.</p>
+  </footer>
 </body>
 </html>
