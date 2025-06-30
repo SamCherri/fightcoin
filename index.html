@@ -1,112 +1,134 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <title>Husky FC — Join the Web3 Football Movement</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Husky FC - Decentralized Football Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & Base */
-    * {margin:0;padding:0;box-sizing:border-box;}
-    body {font-family:'Inter', sans-serif; background: #0a0a0a; color:#eee; line-height:1.6; scroll-behavior:smooth;}
-    a {color:#00f7ff; text-decoration:none;}
-    img {max-width:100%; display:block;}
-    /* Navbar */
-    header {position:fixed; width:100%; background:#111; z-index:100; animation:fadeInDown 1s;}
-    .container {max-width:1200px; margin:auto; padding:0 1rem;}
-    .nav {display:flex; align-items:center; justify-content:space-between; height:60px;}
-    .logo {font-family:'Orbitron',sans-serif; font-size:1.5rem; color:#00f7ff;}
-    .menu {display:flex; gap:1.5rem;}
-    .menu a {font-weight:600; transition:color .3s;}
-    .menu a:hover {color:#fff;}
-    /* Hero */
-    .hero {display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; text-align:center; background:linear-gradient(rgba(10,10,10,0.6),rgba(10,10,10,0.6)), url('https://example.com/stadium.jpg') center/cover no-repeat;}
-    .hero h1 {font-family:'Orbitron',sans-serif; font-size:3rem; color:#00f7ff; text-transform:uppercase; animation:glow 2s infinite alternate;}
-    .hero p {margin-top:1rem; font-size:1.2rem; max-width:700px;}
-    .btn {margin-top:2rem; background:#00f7ff; color:#111; font-weight:700; padding:0.8rem 2rem; border-radius:30px; transition:background .3s;}
-    .btn:hover {background:#fff;}
-    /* Sections */
-    section {padding:4rem 0;}
-    .section-title {font-family:'Orbitron',sans-serif; font-size:2rem; color:#00f7ff; text-align:center; margin-bottom:2rem;}
-    .cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;}
-    .card {background:#1a1a1a; padding:2rem; border-radius:12px; animation:fadeInUp .8s both;}
-    .card h3 {font-size:1.5rem; margin-bottom:1rem; color:#00f7ff;}
-    .card p {font-size:1rem;}
-    /* Footer */
-    footer {background:#111; text-align:center; padding:2rem; font-size:.9rem;}
-    /* Animations */
-    @keyframes glow {from {text-shadow:0 0 10px #00f7ff;} to {text-shadow:0 0 20px #00f7ff;}}
-    @keyframes fadeInDown {from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
-    @keyframes fadeInUp {from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-    /* Responsive */
-    @media(max-width:768px) {.hero h1 {font-size:2.5rem;} .menu {display:none;} .nav {justify-content:space-between;} }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; line-height: 1.6; background: #f9f9f9; color: #222; }
+    header { background: linear-gradient(to right, #001f3f, #0074d9); color: white; text-align: center; padding: 60px 20px; }
+    header h1 { font-size: 3em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; }
+    nav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 15px 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 999; }
+    nav .logo { font-size: 1.4em; font-weight: 700; color: #001f3f; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 600; transition: 0.2s; }
+    nav ul li a:hover { color: #0074d9; }
+    nav .lang-buttons button { margin-left: 10px; padding: 6px 12px; border: none; background-color: #0074d9; color: white; border-radius: 4px; cursor: pointer; }
+    section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+    section h2 { font-size: 2em; color: #001f3f; margin-bottom: 20px; text-align: center; }
+    section p, section ul { font-size: 1.1em; max-width: 900px; margin: auto; }
+    ul li { margin-bottom: 10px; }
+    .cta { display: block; text-align: center; margin: 30px auto 0; background: #ff4136; color: white; padding: 16px 40px; border-radius: 8px; font-weight: bold; font-size: 1.1em; text-decoration: none; width: fit-content; }
+    .cta:hover { background: #e63b2e; }
+    footer { background: #001f3f; color: white; text-align: center; padding: 40px 20px; font-size: 0.9em; }
+    footer a { color: #7FDBFF; margin: 0 8px; text-decoration: none; font-weight: bold; }
+    .roadmap .step { margin-bottom: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .step h3 { margin-bottom: 10px; color: #0074d9; }
+    .highlight { background: #e8f5ff; padding: 10px; border-left: 4px solid #0074d9; margin: 20px 0; }
   </style>
 </head>
 <body>
+
+  <nav>
+    <div class="logo">Husky FC</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#nft">NFT</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#token">Token</a></li>
+    </ul>
+    <div class="lang-buttons">
+      <button onclick="alert('Coming soon')">PT</button>
+      <button onclick="alert('You are in English')">EN</button>
+      <button onclick="alert('Próximamente')">ES</button>
+    </div>
+  </nav>
+
   <header>
-    <div class="container nav">
-      <div class="logo">Husky FC</div>
-      <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#why">Why Join</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#token">Token</a>
-        <a href="#community">Community</a>
-      </nav>
+    <h1>Husky FC</h1>
+    <p>The first decentralized football club built by the community.</p>
+    <a class="cta" href="#nft">Become a Founding Fan</a>
+  </header>
+
+  <section id="about">
+    <h2>🏟️ About the Project</h2>
+    <p>
+      Husky FC is more than a club — it's a revolution in football. No borders, no owners, no promises of profit. Just pure community spirit, powered by Web3.
+    </p>
+    <p class="highlight">
+      The club has no defined country. Fans will decide where and how it will be born.
+    </p>
+  </section>
+
+  <section id="nft">
+    <h2>🎫 Fan NFT</h2>
+    <p>
+      Support the project by buying the official Fan NFT. It's unlimited and symbolic. Holders will be eternally recognized as pioneers.
+    </p>
+    <ul>
+      <li>✔️ Symbol of support</li>
+      <li>✔️ Future exclusive Discord role</li>
+      <li>✔️ You help build the club step by step</li>
+    </ul>
+    <a class="cta" href="#">Buy Fan NFT</a>
+  </section>
+
+  <section id="roadmap">
+    <h2>📈 Roadmap</h2>
+    <div class="step">
+      <h3>Phase 1 – US$10,000</h3>
+      <p>Website, branding, and launch campaign</p>
     </div>
-  </header>  <div class="hero">
-    <h1>Join the Web3 Football Revolution</h1>
-    <p>Be part of the world’s first football club fully owned by its supporters. Mint your NFT, govern decisions through DAO votes and help us build history.</p>
-    <a href="#nft" class="btn">Mint Your NFT</a>
-  </div>  <section id="why">
-    <div class="container">
-      <h2 class="section-title">Why Join Husky FC?</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>True Ownership</h3>
-          <p>Each NFT & token holder has real voting power. Decide on kit designs, stadium upgrades and more.</p>
-        </div>
-        <div class="card">
-          <h3>Exclusive Benefits</h3>
-          <p>Access to VIP events, merchandise drops and direct interaction with players and staff.</p>
-        </div>
-        <div class="card">
-          <h3>Transparent Funding</h3>
-          <p>All treasury funds are publicly visible on Shibarium, with clear allocation and regular on-chain audits.</p>
-        </div>
-      </div>
+    <div class="step">
+      <h3>Phase 2 – US$20,000</h3>
+      <p>Launch token, start community governance, build team</p>
     </div>
-  </section>  <section id="roadmap">
-    <div class="container">
-      <h2 class="section-title">Roadmap</h2>
-      <ul>
-        <li><strong>Phase 1:</strong> Brand & community launch, NFT mint — <strong>US$0</strong></li>
-        <li><strong>Phase 2:</strong> Token deployment on Shibarium, locking until soft cap — <strong>US$20K</strong></li>
-        <li><strong>Phase 3:</strong> Marketing push, team & stadium concept — <strong>US$50K</strong></li>
-        <li><strong>Phase 4:</strong> DAO governance tool, infrastructure rollout — <strong>US$100K</strong></li>
-      </ul>
+    <div class="step">
+      <h3>Phase 3 – US$60,000</h3>
+      <p>Coach, uniforms, first players</p>
     </div>
-  </section>  <section id="token">
-    <div class="container">
-      <h2 class="section-title">Tokenomics $SFC</h2>
-      <p>$SFC is the utility token on Shibarium. Locked until finance goal is met, treasury is DAO-managed:</p>
-      <ul>
-        <li>60% Infrastructure & operations</li>
-        <li>10% Marketing & growth</li>
-        <li>10% Team & development</li>
-        <li>10% Platform fees</li>
-        <li>10% Emergency reserve</li>
-      </ul>
+    <div class="step">
+      <h3>Phase 4 – US$80,000</h3>
+      <p>Infrastructure: training field</p>
     </div>
-  </section>  <section id="community">
-    <div class="container">
-      <h2 class="section-title">Join the Community</h2>
-      <p>Connect with fellow supporters, discuss proposals and stay updated:</p>
-      <p>🔗 <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">Telegram</a> &nbsp;•&nbsp; 🎥 <a href="https://www.tiktok.com/@huskyf.c" target="_blank">TikTok</a></p>
+    <div class="step">
+      <h3>Phase 5 – US$120,000</h3>
+      <p>Operational fund for 1 full season</p>
     </div>
-  </section>  <footer>
-    <div class="container">
-      <p>© 2025 Husky FC — Built by the community, for the world. 🐾</p>
+    <div class="step">
+      <h3>Phase 6 – US$160,000</h3>
+      <p>Official jersey + online store</p>
     </div>
+    <div class="step">
+      <h3>Phase 7 – US$200,000</h3>
+      <p>Mass marketing and token listing</p>
+    </div>
+  </section>
+
+  <section id="community">
+    <h2>🤝 Join the Community</h2>
+    <p>
+      Connect with us, ask questions, and help shape Husky FC.
+    </p>
+    <p style="text-align:center">
+      <a href="https://t.me/+9_4IHYOLigI2OGIx" target="_blank">📱 Telegram</a> |
+      <a href="https://www.tiktok.com/@huskyf.c" target="_blank">🎥 TikTok</a>
+    </p>
+  </section>
+
+  <section id="token">
+    <h2>🚧 Token Coming Soon</h2>
+    <p>
+      The Husky FC token will only be launched once we reach the first funding goal. It will be locked until sufficient capital is raised. Details will be public and auditable.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Husky FC — Built by dreamers, not owners. 100% community funded. No profit promises. Fully transparent.</p>
   </footer>
 </body>
 </html>
