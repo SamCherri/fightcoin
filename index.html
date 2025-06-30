@@ -1,241 +1,68 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Husky FC - Decentralized Football Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pioneer Pass Mint</title>
   <style>
-    :root {
-      --primary: #001f3f;
-      --secondary: #0074d9;
-      --accent: #ffdc00;
-      --neutral-light: #f4f6fa;
-      --button-bg: #ffffff;
-      --button-border: #0074d9;
-      --button-hover: #eaf4ff;
-      --text-color: #001f3f;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--neutral-light); color: var(--text-color); }
-    nav {
-      background: var(--primary);
-      color: white;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 12px 24px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .nav-left, .nav-right {
-      display: flex;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .lang-btn {
-      margin: 6px;
-      padding: 6px 12px;
-      background: var(--button-bg);
-      color: var(--text-color);
-      border: 2px solid var(--button-border);
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .lang-btn:hover { background: var(--button-hover); }
-    .btn-social {
-      margin: 6px;
-      padding: 8px 16px;
-      background: var(--button-bg);
-      color: var(--text-color);
-      font-weight: 600;
-      border: 2px solid var(--button-border);
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .btn-social:hover { background: var(--button-hover); }
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    header h1 { font-size: 2.8em; letter-spacing: 2px; margin-bottom: 10px; }
-    header p { font-size: 1.1em; max-width: 700px; margin: auto; line-height: 1.5; }
-    .cta-main {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 14px 28px;
-      background: var(--accent);
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .cta-main:hover { background: #f4cf00; }
-    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-    .section-box {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
-    }
-    h2 { color: var(--primary); margin-bottom: 16px; font-size: 1.6em; }
-    ul li { margin-bottom: 10px; line-height: 1.6; }
-    .roadmap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .phase {
-      background: #f9f9f9;
-      padding: 16px 20px;
-      border-left: 6px solid var(--secondary);
-      border-radius: 8px;
-    }
-    footer { text-align: center; padding: 30px 20px; font-size: 0.9em; color: #666; }
-    @media (max-width: 768px) {
-      nav { flex-direction: column; }
-      .nav-left, .nav-right { flex: none; justify-content: center; margin: 8px 0; }
-      header { padding: 80px 10px; }
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0D1B2A; color: #E2E8F0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .container { text-align: center; max-width: 400px; padding: 2rem; background: #112240; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    h1 { margin-bottom: 0.5rem; color: #4FD1C5; }
+    p { margin-bottom: 1rem; }
+    #counter { font-size: 1.5rem; margin: 1rem 0; color: #A6E22E; }
+    button { background: #A6E22E; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 8px; cursor: pointer; color: #0D1B2A; }
+    button:disabled { background: #718096; cursor: not-allowed; }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-left">
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn" onclick="setLang('es')">ES</button>
-    </div>
-    <div class="nav-right">
-      <a href="https://www.tiktok.com/@huskyf.c" class="btn-social" target="_blank">TikTok</a>
-      <a href="https://t.me/+9_4IHYOLigI2OGIx" class="btn-social" target="_blank">Telegram</a>
-      <a href="#" class="btn-social" style="opacity:0.6;cursor:not-allowed;">Discord</a>
-    </div>
-  </nav>  <header>
-    <h1 data-key="title">Husky FC</h1>
-    <p data-key="subtitle">The first decentralized football club created by the community. ⚽</p>
-    <a href="#buy" class="cta-main" data-key="cta">Buy Fan NFT</a>
-  </header>  <section class="section-box">
-    <h2 data-key="about_title">About the Project</h2>
-    <p data-key="about_text">Husky FC is a revolutionary football club fully funded by a crypto-powered community. Every supporter becomes a co-creator via NFTs, voting, and future DAO governance. Starting digitally, we grow into a real team with our own infrastructure. Transparency, passion, and decentralization guide our mission.</p>
-  </section>  <section class="section-box">
-    <h2 data-key="nft_title">🎟️ Fan NFT – Your Pass</h2>
-    <ul>
-      <li data-key="nft1">Support early and show your belief</li>
-      <li data-key="nft2">Be forever recognized as a founding supporter</li>
-      <li data-key="nft3">Exclusive future Discord DAO role</li>
-    </ul>
-    <a id="buy" href="#" class="cta-main" data-key="cta">Buy Fan NFT</a>
-  </section>  <section class="section-box">
-    <h2 data-key="roadmap_title">📈 Roadmap</h2>
-    <div class="roadmap">
-      <div class="phase">
-        <strong data-key="phase1">Phase 1 – US$10,000</strong>
-        <p data-key="phase1_desc">Token launch, official website, and viral marketing.</p>
-      </div>
-      <div class="phase">
-        <strong data-key="phase2">Phase 2 – US$20,000</strong>
-        <p data-key="phase2_desc">Digital team, identity, and community governance system.</p>
-      </div>
-      <div class="phase">
-        <strong data-key="phase3">Phase 3 – US$60,000</strong>
-        <p data-key="phase3_desc">Launch of the real team, kits, and coaching staff.</p>
-      </div>
-      <div class="phase">
-        <strong data-key="phase4">Phase 4 – US$80,000</strong>
-        <p data-key="phase4_desc">Development of our own stadium and training center.</p>
-      </div>
-    </div>
-  </section>  <section class="section-box">
-    <h2 data-key="token_title">💰 Token (Coming Soon)</h2>
-    <p data-key="token_text">A token will power the Husky FC ecosystem. It will be locked until the minimum fund is reached. Full transparency and community-first structure.</p>
-  </section>  <footer>
-    <p data-key="foot">🌐 100% Transparent. All funds tracked via public wallet with monthly reports.</p>
-  </footer>  <script>
-    const content = {
-      en: {
-        title: "Husky FC",
-        subtitle: "The first decentralized football club created by the community. ⚽",
-        cta: "Buy Fan NFT",
-        about_title: "About the Project",
-        about_text: "Husky FC is a revolutionary football club fully funded by a crypto-powered community. Every supporter becomes a co-creator via NFTs, voting, and future DAO governance. Starting digitally, we grow into a real team with our own infrastructure. Transparency, passion, and decentralization guide our mission.",
-        nft_title: "🎟️ Fan NFT – Your Pass",
-        nft1: "Support early and show your belief",
-        nft2: "Be forever recognized as a founding supporter",
-        nft3: "Exclusive future Discord DAO role",
-        roadmap_title: "📈 Roadmap",
-        phase1: "Phase 1 – US$10,000",
-        phase1_desc: "Token launch, official website, and viral marketing.",
-        phase2: "Phase 2 – US$20,000",
-        phase2_desc: "Digital team, identity, and community governance system.",
-        phase3: "Phase 3 – US$60,000",
-        phase3_desc: "Launch of the real team, kits, and coaching staff.",
-        phase4: "Phase 4 – US$80,000",
-        phase4_desc: "Development of our own stadium and training center.",
-        token_title: "💰 Token (Coming Soon)",
-        token_text: "A token will power the Husky FC ecosystem. It will be locked until the minimum fund is reached. Full transparency and community-first structure.",
-        foot: "🌐 100% Transparent. All funds tracked via public wallet with monthly reports."
-      },
-      pt: {
-        title: "Husky FC",
-        subtitle: "O primeiro clube de futebol descentralizado criado pela comunidade. ⚽",
-        cta: "Comprar Fan NFT",
-        about_title: "Sobre o Projeto",
-        about_text: "Husky FC é um clube revolucionário financiado por uma comunidade via criptomoeda. Cada torcedor é co-criador via NFTs, votos e futura governança DAO. Começamos digitalmente e cresceremos até sermos um time real com nossa própria infraestrutura. Transparência, paixão e descentralização guiam nossa missão.",
-        nft_title: "🎟️ Fan NFT – Seu Passe",
-        nft1: "Apoie cedo e mostre sua crença",
-        nft2: "Eternize-se como apoiador fundador",
-        nft3: "Cargo exclusivo no futuro Discord DAO",
-        roadmap_title: "📈 Roadmap",
-        phase1: "Fase 1 – US$10.000",
-        phase1_desc: "Lançamento do token, site oficial e campanha de marketing.",
-        phase2: "Fase 2 – US$20.000",
-        phase2_desc: "Time digital, identidade e sistema de governança comunitária.",
-        phase3: "Fase 3 – US$60.000",
-        phase3_desc: "Lançamento do time real, uniformes e comissão técnica.",
-        phase4: "Fase 4 – US$80.000",
-        phase4_desc: "Desenvolvimento do nosso próprio estádio e centro de treinamento.",
-        token_title: "💰 Token (Em breve)",
-        token_text: "Um token impulsionará o ecossistema Husky FC. Ficará travado até atingir o fundo mínimo. Transparência total e estrutura comunitária.",
-        foot: "🌐 100% Transparente. Todos os fundos rastreados em carteira pública com relatórios mensais."
-      },
-      es: {
-        title: "Husky FC",
-        subtitle: "El primer club de fútbol descentralizado creado por la comunidad. ⚽",
-        cta: "Comprar Fan NFT",
-        about_title: "Sobre el Proyecto",
-        about_text: "Husky FC es un club revolucionario financiado por una comunidad criptográfica. Cada fan es co-creador vía NFTs, votos y futura gobernanza DAO. Comenzamos digitalmente y crecemos hasta ser un equipo real con nuestra propia infraestructura. Transparencia, pasión y descentralización guían nuestra misión.",
-        nft_title: "🎟️ Fan NFT – Tu Pase",
-        nft1: "Apoya temprano y demuestra tu fe",
-        nft2: "Sé inmortalizado como fan fundador",
-        nft3: "Cargo exclusivo en el futuro Discord DAO",
-        roadmap_title: "📈 Hoja de Ruta",
-        phase1: "Fase 1 – US$10.000",
-        phase1_desc: "Lanzamiento del token, sitio oficial y campaña de marketing.",
-        phase2: "Fase 2 – US$20.000",
-        phase2_desc: "Equipo digital, identidad y sistema de gobernanza comunitaria.",
-        phase3: "Fase 3 – US$60.000",
-        phase3_desc: "Lanzamiento del equipo real, uniformes y cuerpo técnico.",
-        phase4: "Fase 4 – US$80.000",
-        phase4_desc: "Desarrollo de nuestro propio estadio y centro de entrenamiento.",
-        token_title: "💰 Token (Próximamente)",
-        token_text: "Un token impulsionará el ecosistema Husky FC. Estará bloqueado hasta alcanzar el fondo mínimo. Transparencia total y estructura comunitaria.",
-        foot: "🌐 100% Transparente. Todos los fondos rastreados en billetera pública con reportes mensuales."
-      }
-    };
-    function setLang(lang) {
-      document.documentElement.lang = lang;
-      const langContent = content[lang] || content.en;
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (langContent[key]) el.textContent = langContent[key];
-      });
+  <div class="container">
+    <h1>Pioneer Pass</h1>
+    <p>Adquira seu NFT e torne-se Torcedor Pioneiro por R$ 100.</p>
+    <div id="counter">Carregando...</div>
+    <button id="mintButton">Mintar Pioneer Pass</button>
+  </div>  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/web3modal@1.9.0/dist/index.js"></script>  <script>
+    const contractAddress = "SEU_CONTRACT_ADDRESS_AQUI";
+    const contractABI = [
+      {"inputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"constructor"},
+      {"inputs":[],"name":"closeSale","outputs":[],"stateMutability":"nonpayable","type":"function"},
+      {"inputs":[],"name":"saleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
+      {"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"}
+    ];
+
+    let provider, signer, contract;
+    const priceRWei = ethers.utils.parseUnits("100", "ether"); // R$100 equivalente em wei da rede
+
+    async function init() {
+      const web3Modal = new window.Web3Modal.default({ cacheProvider: false });
+      const instance = await web3Modal.connect();
+      provider = new ethers.providers.Web3Provider(instance);
+      signer = provider.getSigner();
+      contract = new ethers.Contract(contractAddress, contractABI, signer);
+      document.getElementById('mintButton').addEventListener('click', mintPass);
+      updateCounter();
+      setInterval(updateCounter, 15000);
     }
-    setLang('en');
+
+    async function updateCounter() {
+      const balance = await provider.getBalance(contractAddress);
+      const sold = balance.div(priceRWei).toNumber();
+      document.getElementById('counter').innerText = `${sold} Torcedores Pioneiros`;
+      const sale = await contract.saleActive();
+      document.getElementById('mintButton').disabled = !sale;
+      if (!sale) document.getElementById('mintButton').innerText = 'Venda Encerrada';
+    }
+
+    async function mintPass() {
+      try {
+        const tx = await contract.mint(1, { value: priceRWei });
+        await tx.wait();
+        alert('Mint concluído! Bem-vindo, Torcedor Pioneiro.');
+        updateCounter();
+      } catch (e) {
+        console.error(e);
+        alert('Erro no mint: ' + (e.data?.message || e.message));
+      }
+    }
+
+    window.addEventListener('load', init);
   </script></body>
-</html> 
+</html>
