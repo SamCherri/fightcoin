@@ -1,68 +1,101 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pioneer Pass Mint</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0D1B2A; color: #E2E8F0; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    .container { text-align: center; max-width: 400px; padding: 2rem; background: #112240; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    h1 { margin-bottom: 0.5rem; color: #4FD1C5; }
-    p { margin-bottom: 1rem; }
-    #counter { font-size: 1.5rem; margin: 1rem 0; color: #A6E22E; }
-    button { background: #A6E22E; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 8px; cursor: pointer; color: #0D1B2A; }
-    button:disabled { background: #718096; cursor: not-allowed; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lisonários - Seu Primeiro Investimento Comunitário</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
-    <h1>Pioneer Pass</h1>
-    <p>Adquira seu NFT e torne-se Torcedor Pioneiro por R$ 100.</p>
-    <div id="counter">Carregando...</div>
-    <button id="mintButton">Mintar Pioneer Pass</button>
-  </div>  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/web3modal@1.9.0/dist/index.js"></script>  <script>
-    const contractAddress = "SEU_CONTRACT_ADDRESS_AQUI";
-    const contractABI = [
-      {"inputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"constructor"},
-      {"inputs":[],"name":"closeSale","outputs":[],"stateMutability":"nonpayable","type":"function"},
-      {"inputs":[],"name":"saleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},
-      {"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"}
-    ];
-
-    let provider, signer, contract;
-    const priceRWei = ethers.utils.parseUnits("100", "ether"); // R$100 equivalente em wei da rede
-
-    async function init() {
-      const web3Modal = new window.Web3Modal.default({ cacheProvider: false });
-      const instance = await web3Modal.connect();
-      provider = new ethers.providers.Web3Provider(instance);
-      signer = provider.getSigner();
-      contract = new ethers.Contract(contractAddress, contractABI, signer);
-      document.getElementById('mintButton').addEventListener('click', mintPass);
-      updateCounter();
-      setInterval(updateCounter, 15000);
-    }
-
-    async function updateCounter() {
-      const balance = await provider.getBalance(contractAddress);
-      const sold = balance.div(priceRWei).toNumber();
-      document.getElementById('counter').innerText = `${sold} Torcedores Pioneiros`;
-      const sale = await contract.saleActive();
-      document.getElementById('mintButton').disabled = !sale;
-      if (!sale) document.getElementById('mintButton').innerText = 'Venda Encerrada';
-    }
-
-    async function mintPass() {
-      try {
-        const tx = await contract.mint(1, { value: priceRWei });
-        await tx.wait();
-        alert('Mint concluído! Bem-vindo, Torcedor Pioneiro.');
-        updateCounter();
-      } catch (e) {
-        console.error(e);
-        alert('Erro no mint: ' + (e.data?.message || e.message));
-      }
-    }
-
-    window.addEventListener('load', init);
-  </script></body>
-</html> 
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">  <!-- Header -->  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">Lisonários (LISO)</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#sobre" class="hover:text-blue-500">Sobre</a></li>
+          <li><a href="#tokenomics" class="hover:text-blue-500">Tokenomics</a></li>
+          <li><a href="#nft" class="hover:text-blue-500">NFTs</a></li>
+          <li><a href="#roadmap" class="hover:text-blue-500">Roadmap</a></li>
+          <li><a href="#contato" class="hover:text-blue-500">Participe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>  <!-- Hero -->  <section class="bg-blue-700 text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4">Juntos Somos mais Fortes</h2>
+      <p class="text-lg max-w-2xl mx-auto mb-8">Unindo 'lisos' de Botucatu e interior de SP para criar um fundo coletivo de R$100.000 em ativos reais e valorizar o token LISO.</p>
+      <a href="#contato" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">Participe Agora</a>
+    </div>
+  </section>  <!-- Sobre -->  <section id="sobre" class="container mx-auto px-6 py-16">
+    <h3 class="text-3xl font-semibold text-blue-700 mb-4">O que é Lisonários?</h3>
+    <p>O projeto Lisonários (símbolo LISO) é uma iniciativa comunitária que reúne pessoas com baixo capital para, em conjunto, arrecadar um soft-cap de <strong>R$100.000</strong>. Esses recursos serão investidos em ativos reais — Tesouro Direto, FIIs e criptomoedas — e os lucros reinjetados para valorizar o token.</p>
+  </section>  <!-- Tokenomics -->  <section id="tokenomics" class="bg-white py-16">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-semibold text-blue-700 mb-6">Tokenomics & Alocação de Fundos</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <ul class="list-disc pl-5">
+          <li><strong>Investimentos em ativos:</strong> 60% (R$60.000)</li>
+          <li><strong>Marketing:</strong> 10% (R$10.000)</li>
+          <li><strong>Equipe e gestão:</strong> 10% (R$10.000)</li>
+          <li><strong>Taxas operacionais:</strong> 10% (R$10.000)</li>
+          <li><strong>Reserva de emergência:</strong> 10% (R$10.000)</li>
+        </ul>
+        <p>O token LISO permanecerá bloqueado para transferências até que o soft-cap de R$100.000 seja alcançado e investido, garantindo compromisso e evitando especulação prematura.</p>
+      </div>
+    </div>
+  </section>  <!-- NFTs -->  <section id="nft" class="container mx-auto px-6 py-16">
+    <h3 class="text-3xl font-semibold text-blue-700 mb-6">Coleções de NFTs</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Starter -->
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        <h4 class="text-xl font-bold mb-2">Liso Starter</h4>
+        <p class="mb-4">1000 unidades • R$50 cada</p>
+        <ul class="list-disc pl-5 mb-4">
+          <li>Acesso a grupo exclusivo</li>
+          <li>Voucher de desconto na próxima mint</li>
+        </ul>
+        <a href="#contato" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-600">Mintar</a>
+      </div>
+      <!-- Booster -->
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        <h4 class="text-xl font-bold mb-2">Liso Booster</h4>
+        <p class="mb-4">500 unidades • R$150 cada</p>
+        <ul class="list-disc pl-5 mb-4">
+          <li>Voto em decisões de marketing</li>
+          <li>5% cashback em futuras mints</li>
+        </ul>
+        <a href="#contato" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-600">Mintar</a>
+      </div>
+      <!-- Max -->
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        <h4 class="text-xl font-bold mb-2">Liso Max</h4>
+        <p class="mb-4">200 unidades • R$500 cada</p>
+        <ul class="list-disc pl-5 mb-4">
+          <li>Canal de governance VIP</li>
+          <li>10% cashback</li>
+        </ul>
+        <a href="#contato" class="inline-block bg-blue-700 text-white px-4 py-2 rounded-full hover:bg-blue-600">Mintar</a>
+      </div>
+    </div>
+    <p class="text-sm text-gray-600 mt-6">*NFTs não garantem valorização; risco total ao comprador. Consulte nosso disclaimer legal.*</p>
+  </section>  <!-- Roadmap -->  <section id="roadmap" class="bg-white py-16">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-semibold text-blue-700 mb-6">Roadmap</h3>
+      <ol class="list-decimal list-inside space-y-4">
+        <li><strong>Jul/2025:</strong> Lançamento Liso Starter + campanha Telegram Ads</li>
+        <li><strong>Set/2025:</strong> Segunda mint (Booster) + campanhas Facebook/Instagram</li>
+        <li><strong>Nov/2025:</strong> Lançamento Liso Max + governance no Discord</li>
+        <li><strong>Jan/2026:</strong> Deploy do token LISO na Shibarium + início de investimentos</li>
+      </ol>
+    </div>
+  </section>  <!-- CTA & Contato -->  <section id="contato" class="bg-blue-700 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h4 class="text-2xl font-bold mb-4">Pronto para virar um Liso?</h4>
+      <p class="mb-6">Participe da comunidade e comece sua jornada coletiva hoje mesmo.</p>
+      <a href="https://t.me/lisonarios_botucatu" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100">Entrar no Telegram</a>
+    </div>
+  </section>  <!-- Footer -->  <footer class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-6 text-center text-sm">
+      <p>&copy; 2025 Lisonários. Todos os direitos reservados.</p>
+      <p><a href="#" class="hover:text-white">Política de Privacidade</a> • <a href="#" class="hover:text-white">Disclaimer Legal</a></p>
+    </div>
+  </footer></body>
+</html>
